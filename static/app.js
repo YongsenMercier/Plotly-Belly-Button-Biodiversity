@@ -1,5 +1,5 @@
 function getPlots(id) {
-    //Read samples.json
+    //Read samples.json.
         d3.json("samples.json").then (sampledata =>{
             console.log(sampledata)
             var ids = sampledata.samples[0].otu_ids;
@@ -13,7 +13,7 @@ function getPlots(id) {
         // get the otu id's to the desired form for the plot
             var OTU_id = OTU_top.map(d => "OTU " + d);
             console.log(`OTU IDS: ${OTU_id}`)
-         // get the top 10 labels for the plot
+         // get the top 10 labels for the plot.
             var labels =  sampledata.samples[0].otu_labels.slice(0,10);
             console.log(`OTU_labels: ${labels}`)
             var trace = {
@@ -25,10 +25,10 @@ function getPlots(id) {
                 type:"bar",
                 orientation: "h",
             };
-            // create data variable
+            // create data variable.
             var data = [trace];
     
-            // create layout variable to set plots layout
+            // create layout variable to set plots layout.
             var layout = {
                 title: "Top 10 OTU",
                 yaxis:{
@@ -42,9 +42,9 @@ function getPlots(id) {
                 }
             };
     
-            // create the bar plot
+            // create the bar plot.
         Plotly.newPlot("bar", data, layout);
-            // The bubble chart
+            // The bubble chart.
             var trace1 = {
                 x: sampledata.samples[0].otu_ids,
                 y: sampledata.samples[0].sample_values,
